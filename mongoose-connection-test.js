@@ -2,14 +2,15 @@ var express     = require('express');
 var routes      = require('./routes');
 var user        = require('./routes/user');
 var http        = require('http');
-var path        = require('path');
+var path        = require('path'); 
 var bodyParser  = require('body-parser');
 // get mongoose package
 var mongoose = require('mongoose');
-var app  = express();
 
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
+var app  = express();
+var port = process.env.PORT || 3000;
+
+app.set('port', port);
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 
